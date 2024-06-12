@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Destructing</title>
+    <script>
+         
+         // What do you mean by De- Structuring
+
+        //  var hero = {
+
+        //     title : "Superman",
+        //     power : 6
+        //  };
+
+        //  let tempHero = hero;
+        //  console.log(hero.power); // 6
+        //  console.log(tempHero.power); // 6
+        //  tempHero.power = 10;
+        //  console.log(tempHero.power); // 10
+        //  console.log(hero.power); // 10
+
+         // first and second will be 6 and when the tempHero.power is changed to 10
+         // third output changes to 10
+         // the major question is what about the fourth output?
+         // whenever u are assigning a array or a object to a variable in js you are basically 
+         // creating a pointer or refernce.
+         // when you are modifying the pointer or referce you are inturn modifying the object.
+
+        //   let hero = {
+
+        //     title : "Superman",
+        //     power : 6
+        //  };
+
+        //  var heroTitle = hero.title;
+        //  var heroPower = hero.power;
+
+        //  console.log(heroPower); // 6
+        //  heroPower = 10;
+        //  console.log(heroPower); // 6
+
+        // ------------ DESTRUCTURING ----------------------
+
+        // var {title : heroTitle, power: heroPower} = hero;
+        // console.log(heroPower);
+        // heroPower = 10;
+        // console.log(heroPower); // 10
+        // console.log(hero.power); // 6
+
+
+
+        // // --------------------in ARRAY ----------------------
+
+
+        // var justiceLeague = ["Batman", "Superman" , "Wonderwoman"];
+        // var [firstHero, secondHero , thirdHero] = justiceLeague;
+
+        // console.log(firstHero, secondHero, thirdHero);
+
+
+        // we can do a slightly bigger object
+
+        // let hero = {
+        //     title : "Minnal Murali",
+        //     power : 10,
+        //     firstName : "Minnal",
+        //     secondName : "Murali",
+        //     city : "Desham"
+        // }
+
+        // destructuring it the old way is very difficult.
+
+        // let tempHero = JSON.parse(JSON.stringify(hero))
+
+        // MAKING A DEEP CLONE.
+
+        // console.log(tempHero);
+        // console.log(hero);
+        // tempHero.title = "Ironman";
+        // console.log(tempHero.title); // Ironman
+        // console.log(hero.title);  // Minnal Murali
+
+        // creates a shallow refernce - cluless about nesting and all
+
+        // let tempHero = {...hero};
+
+        // console.log(tempHero);
+        // console.log(hero);
+        // tempHero.title = "Ironman";
+        // console.log(tempHero.title); // Ironman
+        // console.log(hero.title);  // Minnal Murali
+
+        // ...
+        // @@ --- private properties not to be used - that should not be modified or altered
+        // ** --- power
+
+ 
+
+
+
+
+
+
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Arrow Functionscript
+    </title>
+
+    <script>
+
+        // IN JS there are two types of writing a function
+
+        // function adder1(num1,num2){  // function declaration
+        //     return num1+ num2;
+        // }
+// ---------------------------------------------------
+        let adder2 = function(num1,num2){ // -----second one
+            return num1 + num2
+        }   
+
+        let adder3 = (num1,num2)=>{
+            return num1 + num2;
+        }
+
+        // it can be further tone down into ......
+
+        let adder4 = (num1,num2)=> num1+num2;
+
+        /* 
+           insteaad of using function keyword an arrow can be used
+           like this => . and there is reason why it is called a FAT ARROW
+           beacuse it can be also written as -> 
+        */
+
+        // second one will hoist but this onw will not be hoisted.
+
+
+        // moving further let us assume there is one parameter;
+
+        let adder5 =  num1 => num1 + num1;
+
+        /* 
+           ARROW FUNCTION DOESN'T HAVE A SCOPE OF ITS OWN . 
+           IT BORROWS SCOPE FROM ITS PARENT 
+        */
+       
+
+
+
+        
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

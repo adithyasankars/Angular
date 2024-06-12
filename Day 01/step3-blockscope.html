@@ -1,0 +1,91 @@
+
+<!-- ===================== scope =================================== -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+
+        // console.log(name);
+        // var name = "Adithya";
+
+        // var user = undefined;
+        // console.log(name);                       HOISTING
+        // user = "Adithya";
+
+        // for(var i = 0;i < 100; i++){
+            
+        //     console.log("value of i now is ", i);
+            
+        // }
+        // console.log(window.i);
+
+        // function init(){
+        //     // var user = "Adithya";
+        //     // console.log(user);
+
+        //     // console.log(user);
+        //     // var user = "Adithya";                   // undefined
+
+        //     // console.log(user);
+        //     // let user = "Adithya";
+            
+        //     // temporal dead zone: TDZ - ot will be hoisted
+        //     var user = "Adithya";
+        // }
+        // // console.log(user);
+
+        // init();
+        // console.log(user);
+
+        // in js functions are objects 
+        // var has a scope and is not global.
+        // window is global
+
+        // let and const have scope
+
+        // var scope to the object
+        // let is scope to the block
+
+        // var is hoisted to the parent object
+        // let is hoisted to TDZ
+
+        // sometimes scope can be object or arrays
+        // if you put var outside the scope it is attached to the window
+ 
+        //GLOBAL
+
+        var hero = {
+            title:  "Ironman",
+            power: 6
+        };
+
+        function checkpower(){
+            if(hero.power >5){
+                var temptitle = hero.title;
+                hero.title = temptitle + " is strong";
+                console.log(temptitle); // Ironman
+            }
+            console.log(temptitle); // Ironman
+        };
+        checkpower();
+
+        console.log(hero.title);
+        
+    </script>
+</head>
+<body>
+    
+</body>
+</html>
+
+
+<!-- Why is it showing 100?
+   
+because of Hoisting
+-->
+
+<!--  var is not global -->
