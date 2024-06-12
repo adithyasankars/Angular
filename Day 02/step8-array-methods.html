@@ -65,6 +65,53 @@
         // console.log(favNums);
         // console.log(doubleFavNums);
 
+    // var lessThan50 = favNums.filter(val => val < 50);
+    // console.log(favNums);
+    // console.log(lessThan50);
+
+    // var areAllValuesLessThan50 = favNums.every(val=> val < 50);
+    // console.log(areAllValuesLessThan50);
+
+    var areAllValuesLessThan50 = favNums.every(val=> {
+        console.log(val);
+        return val < 50;
+    });
+
+    console.log(areAllValuesLessThan50);
+
+    var areSomeValuesLessThan50 = favNums.some(val=> {
+        console.log(val);
+        return val < 50;
+    });
+
+    console.log(areSomeValuesLessThan50);
+
+    // --------------------------- reduce --------------------------
+
+    // var total = favNums.reduce(function(initVal , val , idx, arr){
+    //     console.log(val);
+    //     return initVal + val;
+    // },0);// here the zero is the default value  given for -- initVal
+
+    // console.log(total);
+
+    // var total = favNums.reduceRight(function(initVal , val , idx, arr){
+    //     console.log(val);
+    //     return initVal + val;
+    // },0);
+
+    // console.log(total);
+
+    // -------------------------- index -------------------
+
+    // console.log(favNums.indexOf(1));
+
+    // console.log(favNums.lastIndexOf(1));
+
+
+
+
+
         
 
     </script>
