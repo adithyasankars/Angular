@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OBJECTS - GETTER and SETTER</title>
+
+    <script>
+        // var obj1 = new Object();
+        // var obj2 = {};
+        // var objj3 = Object.create(null); // it needs a template object if there is no template object use null
+
+        var hero = Object.create(null); 
+        //hero.title = "Ironman";
+        Object.defineProperty(hero,"title", {configurable:true, value :"Ironman", writable:true, enumerable:true})
+        
+
+        // ------------------- setter and getter -------------------------------------
+
+        Object.defineProperty(hero, "access_title",{
+          get : function(){
+            return this.title
+
+          },
+          set : function(ntitle){
+            this.title = ntitle;
+          }
+        });
+
+        console.log(hero.access_title);// getter
+        hero.access_title = "Joker" // setter
+        console.log(hero.access_title) ;// getter
+     
+
+
+    </script>
+</head>
+<body>
+    
+</body>
+</html>
