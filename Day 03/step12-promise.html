@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Promise</title>
+
+    <script>
+        // higher order functions - need to study the definiton
+
+        let agree = true;
+        let promise = new Promise(function( resolve, reject ){
+            setTimeout(function(){
+                if(agree){
+                    resolve("Promise is resolved");
+                }else {
+                    reject("Promise is rejects")
+                }
+            },4000);
+        });
+
+        // promise.then(function(res){
+        //     console.log("Success : ", res);
+        // });
+        // promise.catch(function(err){
+        //     console.log("Error : ", err);
+        // });
+        // promise.finally(function(){
+        //     console.log("Success is now settled");
+        // });
+
+        // promise.then(function(res){
+        //     console.log("Success 1: ", res);
+        //     return res.toUpperCase();
+        // })
+        // .then(function(res){
+        //     console.log("Success 2: ", res);/// -resolved
+        //     return res.toLowerCase();
+        
+        // })
+        // .then(function(res){
+        //     console.log("Success 3: ", res);  /// -resolved
+        // })
+        // .catch(function(err){
+        //     console.log("Error : ", err);
+        // })
+        // .finally(function(){
+        //     console.log("Success is now settled");
+        // });
+
+        // not a good practice
+
+        promise
+        .then(
+            function(res){
+                console.log("Success 1:", res);
+            },
+            function(err){
+                console.log("Error :", err);
+            }
+        )
+
+        // functions when gets into a object will become a method.
+    </script>
+</head>
+<body>
+
+    
+</body>
+</html>
