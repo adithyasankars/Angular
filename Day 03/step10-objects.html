@@ -30,11 +30,11 @@
 
         */
 
-        const car = {
-            type:"Lamborgini",
-            color:"blue",
-            fuel:"petrol",
-        }
+        // const car = {
+        //     type:"Lamborgini",
+        //     color:"blue",
+        //     fuel:"petrol",
+        // }
 
         // here car is object and type,color and fuel are its properties.
 
@@ -51,34 +51,34 @@
 
         // Object literal
 
-        {firstnName : "John", lastName : "Doe", age: 50 , eyeColor: "darkblue"}
+        // {firstnName : "John", lastName : "Doe", age: 50 , eyeColor: "darkblue"}
 
-        // or
+        // // or
 
-        const person =  {
-            firstnName : "John", 
-            lastName : "Doe", 
-            age: 50 , 
-            eyeColor: "darkblue"
-        };
+        // const person =  {
+        //     firstnName : "John", 
+        //     lastName : "Doe", 
+        //     age: 50 , 
+        //     eyeColor: "darkblue"
+        // };
 
         // this example create an empty JS object and add values into it
 
-        const person2 = {};
+        // const person2 = {};
 
-        person2.firstnName = "John"
-        person2.lastName = "Doe"
-        person2.age = 23
-        person2.eyeColor = "dark-brown"
+        // person2.firstnName = "John"
+        // person2.lastName = "Doe"
+        // person2.age = 23
+        // person2.eyeColor = "dark-brown"
 
-        // NEW KEYWORD
+        // // NEW KEYWORD
 
-        const person3 = new Object();
+        // const person3 = new Object();
 
-        person3.firstnName = "James"
-        person3.lastName = "Whiltooth"
-        person3.age = 32
-        person3.eyeColor = "dark-green"
+        // person3.firstnName = "James"
+        // person3.lastName = "Whiltooth"
+        // person3.age = 32
+        // person3.eyeColor = "dark-green"
 
         // accessing the properties
 
@@ -112,13 +112,83 @@
 
         // --------------------------------------------------------------------------------------
 
+        // What Does Mutable Mean?
+        /* 
+           In programming, mutability refers to the ability to change the state or contents of an object after 
+           it has been created. An object that can be changed after its creation is called mutable, whereas an 
+           object that cannot be changed is called immutable.
 
+           ------------------------------------------------------------------------------------------------------
+
+           JavaScript Objects are Mutable
+
+           In JavaScript, objects are mutable. This means that once you create an object, you can change, add, 
+           or delete properties of that object.
+
+           ------------------------------------------------------------------------------------------------------
+
+           Why Mutability is Important?
+
+              ---- Side Effects: If you pass an object to a function and that function modifies the object, those changes 
+              will be visible outside the function. This is because objects are passed by reference.
+
+              ---- Performance: Modifying an object is generally more efficient than creating a new object, especially 
+              if the object is large or if you need to make many changes.
+
+        */
+
+        let user = {
+            name: "Alice",
+            age: 25
+        };
+
+        function updatePerson(userObj) {
+           userObj.age = 30;
+        };
+
+        updatePerson(user);
+        console.log(user.age);
+
+        console.log(user);
+
+        /* In this example, the updatePerson function modifies the age property 
+           of the person object. Because objects are passed by reference, the 
+           change is reflected outside the function. */
+        
+        const x = user;
+
+        /* The object x is not a copy of person. The object x is person.
+
+        The object x and the object person share the SAME MEMMORY ADDRESS.*/
+
+        // Change Age in both
+
+        x.age = 10;
+
+        // Delete
+
+        /* The delete keyword deletes both the value of the property and the property itself.
+
+           After deletion, the property cannot be used before it is added back again. */
+
+        // NESTED OBJECTS
+
+            myObj = {
+                name: "John",
+                age: 30,
+                myCars: {
+                    car1: "Ford",
+                    car2: "BMW",
+                    car3: "Fiat"
+                }
+            }
+            
+            myObj.myCars.car2;
         
 
 
 
-
-
+        
 
 
 
@@ -127,12 +197,12 @@
         // var obj2 = {};
         // var objj3 = Object.create(null); // it needs a template object if there is no template object use null
 
-        var hero = Object.create(null);
-        //hero.title = "Ironman";
-        Object.defineProperty(hero,"title", {configurable:true, value :"Ironman", writable:true, enumerable:true})
-        console.log(hero.title); //Ironman
-        hero.title = "Iron Monger";
-        console.log(hero.title); // nochange still Ironman ---- whrn it was not writtable and enurable false
+        // var hero = Object.create(null);
+        // //hero.title = "Ironman";
+        // Object.defineProperty(hero,"title", {configurable:true, value :"Ironman", writable:true, enumerable:true})
+        // console.log(hero.title); //Ironman
+        // hero.title = "Iron Monger";
+        // console.log(hero.title); // nochange still Ironman ---- whrn it was not writtable and enurable false
 
 
 
@@ -140,30 +210,30 @@
         // --- writable - true then it can be modified
         // --- if enurable is false - which is defualt then it can't be iterated.
 
-        let avenger = {
-            title:"Ironman",
-            power:6,
-            firstnName:"Tony",
-            lastName:"Stark",
-            city:"New York"
-        }
-        // for(let prop in avenger){
-        //     console.log(prop)
+        // let avenger = {
+        //     title:"Ironman",
+        //     power:6,
+        //     firstnName:"Tony",
+        //     lastName:"Stark",
+        //     city:"New York"
+        // }
+        // // for(let prop in avenger){
+        // //     console.log(prop)
+        // // }
+
+        // for(let prop in hero){
+        //     console.log(prop);
         // }
 
-        for(let prop in hero){
-            console.log(prop);
-        }
+        // Object.defineProperty(hero,"title", { value :"Hulk", writable:false, enumerable:false}) // non writtable and non dicoverable
+        // console.log(hero.title); //??
+        // hero.title = "Joker";
+        // console.log(hero.title); // ??
 
-        Object.defineProperty(hero,"title", { value :"Hulk", writable:false, enumerable:false}) // non writtable and non dicoverable
-        console.log(hero.title); //??
-        hero.title = "Joker";
-        console.log(hero.title); // ??
-
-        for(let prop in hero){
-            console.log(prop)
-        };
-        console.log("###############");
+        // for(let prop in hero){
+        //     console.log(prop)
+        // };
+        // console.log("###############");
 
         // it says it can't be redefined
 
