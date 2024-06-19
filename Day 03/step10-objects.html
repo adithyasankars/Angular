@@ -137,25 +137,25 @@
 
         */
 
-        let user = {
-            name: "Alice",
-            age: 25
-        };
+        // let user = {
+        //     name: "Alice",
+        //     age: 25
+        // };
 
-        function updatePerson(userObj) {
-           userObj.age = 30;
-        };
+        // function updatePerson(userObj) {
+        //    userObj.age = 30;
+        // };
 
-        updatePerson(user);
-        console.log(user.age);
+        // updatePerson(user);
+        // console.log(user.age);
 
-        console.log(user);
+        // console.log(user);
 
         /* In this example, the updatePerson function modifies the age property 
            of the person object. Because objects are passed by reference, the 
            change is reflected outside the function. */
         
-        const x = user;
+        // const x = user;
 
         /* The object x is not a copy of person. The object x is person.
 
@@ -163,7 +163,7 @@
 
         // Change Age in both
 
-        x.age = 10;
+        // x.age = 10;
 
         // Delete
 
@@ -173,17 +173,87 @@
 
         // NESTED OBJECTS
 
-            myObj = {
-                name: "John",
-                age: 30,
-                myCars: {
-                    car1: "Ford",
-                    car2: "BMW",
-                    car3: "Fiat"
-                }
-            }
-            
-            myObj.myCars.car2;
+            // myObj = {
+            //     name: "John",
+            //     age: 30,
+            //     myCars: {
+            //         car1: "Ford",
+            //         car2: "BMW",
+            //         car3: "Fiat"
+            //     }
+            // }
+
+            // myObj.myCars.car2;
+        
+
+    // Displaying Object Properties
+
+    // Create an Object
+
+    const person = {
+        name: "John",
+        age: 30,
+        city: "New York"
+    };
+
+    // Display Properties
+
+    document.getElementById("demo").innerHTML = person.name + "," + person.age + "," + person.city;
+
+    // Displaying Object Properties in a loop
+
+    // let text = "";
+    //     for (let x in person) {
+    //         text += person[x] + " ";
+    //     };
+
+    // Display the Text
+    document.getElementById("demo").innerHTML = text;
+
+    /*
+
+    You must use person[x] in the loop.
+
+    person.x will not work (Because x is the loop variable).
+    
+    */
+
+    // Using Object.values()
+
+        // Create an Array
+        const myArray = Object.values(person);
+
+        // Display the Array
+        document.getElementById("demo").innerHTML = myArray;
+
+    // Using Object.entries()
+
+    // Object.entries() makes it simple to use objects in loops:
+
+    const fruits = { Bananas: 300, Oranges: 200, Apples: 500 };
+
+        let text = "";
+        for (let [fruit, value] of Object.entries(fruits)) {
+            text += fruit + ": " + value + "<br>";
+        }
+    
+    // Using JSON.stringify()
+
+    /* JavaScript objects can be converted to a string with JSON method JSON.stringify().
+
+       JSON.stringify() is included in JavaScript and supported in all major browsers.
+
+       The result will be a string written in JSON notation:
+
+    ---------{ "name": "John", "age": 50, "city": "New York" } */
+
+        // Stringify Object
+        let myString = JSON.stringify(person);
+
+        // Display String
+        document.getElementById("demo").innerHTML = myString;
+    
+
         
 
 
