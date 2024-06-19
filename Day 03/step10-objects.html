@@ -6,6 +6,96 @@
     <title>OBJECTS</title>
 
     <script>
+
+        /*
+
+        for eg let car be an OBJECt
+
+        Properties
+
+        car.name = Fiat
+        car.model = 500
+        car.color = white
+
+        -------------------------------------------------------
+
+
+        Methods
+
+        car.start()
+        car.drive()
+        car.brake()
+
+        OBJECTS are variables tooo. but objects contain many values
+
+        */
+
+        const car = {
+            type:"Lamborgini",
+            color:"blue",
+            fuel:"petrol",
+        }
+
+        // here car is object and type,color and fuel are its properties.
+
+        // it is common practice to declare objects with const keyword
+
+        // HOW TO DEFINE A JAVASCRIPT OBJECT ?
+
+        /*
+            1. Object literal
+            2. new keyword
+            3. Object Constructor
+        
+        */
+
+        // Object literal
+
+        {firstnName : "John", lastName : "Doe", age: 50 , eyeColor: "darkblue"}
+
+        // or
+
+        const person =  {
+            firstnName : "John", 
+            lastName : "Doe", 
+            age: 50 , 
+            eyeColor: "darkblue"
+        };
+
+        // this example create an empty JS object and add values into it
+
+        const person2 = {};
+
+        person2.firstnName = "John"
+        person2.lastName = "Doe"
+        person2.age = 23
+        person2.eyeColor = "dark-brown"
+
+        // NEW KEYWORD
+
+        const person3 = new Object();
+
+        person3.firstnName = "James"
+        person3.lastName = "Whiltooth"
+        person3.age = 32
+        person3.eyeColor = "dark-green"
+
+        // accessing the properties
+
+        /*
+        objectName.propertyName;
+        objectName['propertyName'];
+        */
+
+        // JS OBJECT METHODS
+
+        
+
+
+
+
+
+
         // var obj1 = new Object();
         // var obj2 = {};
         // var objj3 = Object.create(null); // it needs a template object if there is no template object use null
