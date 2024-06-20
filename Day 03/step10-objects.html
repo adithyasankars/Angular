@@ -595,10 +595,10 @@ console.log(entries);
 - Nested objects require additional handling if you need to deeply convert them.
 */
 
+// ------------------------------------------------------------------------------------------------------------------------
+
 // Creates an object from a list of keys/values
 Object.fromEntries()
-
-
 
 const fruits = [
   ["apples", 300],
@@ -623,15 +623,54 @@ corresponding values 300, 900, and 500.
 
 */
 
+// --------------------------------------------------------------------------------------------------------------------------------------
+
 
 // Returns an array of the keys of an object
 Object.keys(object)
 
+// ---------------------------------------------------------------------------------------------------------------------------------------
+
 // Returns an array of the property values of an object
 Object.values(object)
 
+const person = {
+  name: 'John',
+  age: 30,
+  city: 'New York'
+};
+
+const values = Object.values(person);
+console.log(values);
+
+// Output: ['John', 30, 'New York']
+
+// Practical usage 
+
+const orders = {
+  order1: 200,
+  order2: 450,
+  order3: 130,
+  order4: 300
+};
+
+// Get the total value of all orders
+const orderValues = Object.values(orders);
+const totalValue = orderValues.reduce((acc, value) => acc + value, 0);
+
+console.log(totalValue);
+// Output: 1080
+
+
+
+
+// ---------------------------------------------------------------------------------------------------------------------------------
+
+
 // Groups object elements according to a function
 Object.groupBy(object, callback)
+
+
 
 // ------------------------------------------------------------------------------------------------
 
