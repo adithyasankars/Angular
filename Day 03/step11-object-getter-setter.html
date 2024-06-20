@@ -30,6 +30,200 @@
         console.log(hero.access_title);// getter
         hero.access_title = "Joker" // setter
         console.log(hero.access_title) ;// getter
+
+ // ---------------------------------- Javascript Object Accessors -----------------------------------
+
+/*
+
+ JavaScript object accessors allow you to define methods to get and set the values of an object's properties. 
+ There are two types of accessors: getters and setters. 
+
+- **Getters**: Methods that get the value of a specific property.
+- **Setters**: Methods that set the value of a specific property.
+
+These accessors can be defined using the `get` and `set` keywords, respectively.
+
+
+*/
+const obj = {
+  get propertyName() {
+    // code to get the property value
+  },
+  set propertyName(value) {
+    // code to set the property value
+  }
+};
+
+
+// Example 1: Basic Getters and Setters
+
+
+const person = {
+  firstName: 'John',
+  lastName: 'Doe',
+  
+  // Getter
+  get fullName() {
+    return `${this.firstName} ${this.lastName}`;
+  },
+  
+  // Setter
+  set fullName(name) {
+    const parts = name.split(' ');
+    this.firstName = parts[0];
+    this.lastName = parts[1];
+  }
+};
+
+console.log(person.fullName); // Output: John Doe
+
+person.fullName = 'Jane Smith';
+console.log(person.firstName); // Output: Jane
+console.log(person.lastName);  // Output: Smith
+
+/*Advantages of Getters and Setters
+
+1. **Encapsulation**: They allow you to control how a particular property is accessed and modified.
+2. **Validation**: You can add validation logic inside setters to ensure that invalid values are not assigned to a property.
+3. **Computed Properties**: You can compute the property values dynamically using getters.
+
+### Using Getters and Setters in Classes
+
+Getters and setters can also be used in ES6 classes.
+
+#### Example 2: Getters and Setters in Classes
+
+*/
+
+
+class Person {
+  constructor(firstName, lastName) {
+    this.firstName = firstName;
+    this.lastName = lastName;
+  }
+  
+  // Getter
+  get fullName() {
+    return `${this.firstName} ${this.lastName}`;
+  }
+  
+  // Setter
+  set fullName(name) {
+    const parts = name.split(' ');
+    this.firstName = parts[0];
+    this.lastName = parts[1];
+  }
+}
+
+const person = new Person('John', 'Doe');
+console.log(person.fullName); // Output: John Doe
+
+person.fullName = 'Jane Smith';
+console.log(person.firstName); // Output: Jane
+console.log(person.lastName);  // Output: Smith
+```
+
+### Example 3: Validation with Setters
+
+You can add validation logic inside setters to enforce constraints.
+
+```javascript
+const person = {
+  firstName: 'John',
+  lastName: 'Doe',
+  age: 25,
+  
+  // Getter
+  get fullName() {
+    return `${this.firstName} ${this.lastName}`;
+  },
+  
+  // Setter with validation
+  set age(value) {
+    if (value < 0) {
+      console.error('Age cannot be negative');
+    } else {
+      this._age = value;
+    }
+  },
+  
+  get age() {
+    return this._age;
+  }
+};
+
+console.log(person.age); // Output: 25
+
+person.age = -5; // Output: Age cannot be negative
+console.log(person.age); // Output: 25
+
+person.age = 30;
+console.log(person.age); // Output: 30
+```
+
+### Example 4: Using Object.defineProperty()
+
+You can also define getters and setters using `Object.defineProperty()`.
+
+```javascript
+const person = {
+  firstName: 'John',
+  lastName: 'Doe'
+};
+
+Object.defineProperty(person, 'fullName', {
+  get() {
+    return `${this.firstName} ${this.lastName}`;
+  },
+  set(name) {
+    const parts = name.split(' ');
+    this.firstName = parts[0];
+    this.lastName = parts[1];
+  }
+});
+
+console.log(person.fullName); // Output: John Doe
+
+person.fullName = 'Jane Smith';
+console.log(person.firstName); // Output: Jane
+console.log(person.lastName);  // Output: Smith
+```
+
+### Summary
+
+- **Getters** are methods that get the value of a specific property.
+- **Setters** are methods that set the value of a specific property.
+- They provide encapsulation, validation, and the ability to compute property values dynamically.
+- Getters and setters can be defined directly in objects or in classes, and also using `Object.defineProperty()`.
+
+### Practical Usage
+
+Consider a scenario where you have a `User` object, and you want to ensure that the username is always in lowercase.
+
+```javascript
+const user = {
+  _username: '',
+  
+  get username() {
+    return this._username;
+  },
+  
+  set username(value) {
+    this._username = value.toLowerCase();
+  }
+};
+
+user.username = 'JohnDoe';
+console.log(user.username); // Output: johndoe
+```
+
+In this example:
+- The setter ensures that the username is always stored in lowercase, regardless of the input format.
+  
+If you have any more questions or need further clarification, feel free to ask!
+
+        
+*/
      
 
 
