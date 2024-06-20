@@ -459,11 +459,141 @@
 // Copies properties from a source object to a target object
 Object.assign(target, source)
 
+// --The Object.assign() method copies properties from one or more source objects to a target object.
+
+// Create Target Object
+const person1 = {
+  firstName: "John",
+  lastName: "Doe",
+  age: 50,
+  eyeColor: "blue"
+};
+
+// Create Source Object
+const person2 = {firstName: "Anne",lastName: "Smith"};
+
+// Assign Source to Target
+Object.assign(person1, person2); // the outut will be that target object values will be repaced be the source object elements
+
+
+// -----------------------------------------------------------------------------------------------------------
+
+
+
 // Creates an object from an existing object
 Object.create(object)
 
 // Returns an array of the key/value pairs of an object
 Object.entries(object)
+
+/*
+
+`Object.entries()` is a method in JavaScript that returns an array of a given object's own enumerable 
+string-keyed property `[key, value]` pairs. This method is useful for converting objects into arrays, 
+which can then be manipulated using array methods.
+
+- `obj`: The object whose own enumerable string-keyed property `[key, value]` pairs are to be returned.
+
+
+The `Object.entries()` method takes an object and returns an array of arrays. Each inner array has two elements: 
+-------------the first element is the property key, and 
+-------------the second element is the property value.
+
+*/
+
+// Example 1: Basic Usage
+
+
+const obj = {
+  a: 1,
+  b: 2,
+  c: 3
+};
+
+const entries = Object.entries(obj);
+console.log(entries);
+
+// Output: [['a', 1], ['b', 2], ['c', 3]]
+
+
+// Example 2: Iterating Over Entries
+
+// You can use `Object.entries()` in combination with `for...of` loop to iterate over an object's key-value pairs:
+
+
+const objOne = {
+  a: 1,
+  b: 2,
+  c: 3
+};
+
+for (const [key, value] of Object.entries(objOne)) {
+  console.log(`${key}: ${value}`);
+}
+// Output:
+// a: 1
+// b: 2
+// c: 3
+
+// Example 3: Converting Object to Map
+
+// Since `Map` objects also use key-value pairs, you can easily convert an object to a `Map` using `Object.entries()`:
+
+
+const objTWo = {
+  a: 1,
+  b: 2,
+  c: 3
+};
+
+const map = new Map(Object.entries(obj));
+console.log(map);
+// Output: Map(3) { 'a' => 1, 'b' => 2, 'c' => 3 }
+
+
+// Example 4: Filtering Object Properties
+
+// You can use `Object.entries()` to filter an object’s properties:
+
+const objThree = {
+  a: 1,
+  b: 2,
+  c: 3
+};
+
+const filteredEntries = Object.entries(obj).filter(([key, value]) => value > 1);
+console.log(filteredEntries);
+// Output: [['b', 2], ['c', 3]]
+
+const filteredObj = Object.fromEntries(filteredEntries);
+console.log(filteredObj);
+// Output: { b: 2, c: 3 }
+
+// Example 5: Handling Nested Objects
+
+// When dealing with nested objects, `Object.entries()` will only convert the top-level properties. 
+// You need to use a recursive approach to convert nested objects.
+
+
+const nestedObj = {
+  a: 1,
+  b: { x: 10, y: 20 },
+  c: 3
+};
+
+const entriesOne = Object.entries(nestedObj);
+console.log(entries);
+// Output: [['a', 1], ['b', { x: 10, y: 20 }], ['c', 3]]
+
+
+/// Summary
+
+/*
+- `Object.entries()` is useful for converting objects into arrays of key-value pairs.
+- It can be combined with array methods and loops for various operations like iteration, filtering, and mapping.
+- The method works on the object's own enumerable string-keyed properties.
+- Nested objects require additional handling if you need to deeply convert them.
+*/
 
 // Creates an object from a list of keys/values
 Object.fromEntries()
@@ -598,8 +728,6 @@ fundamental methods and properties used across all objects.
 
 --------  The JavaScript prototype property allows you to add new properties to object constructors
 --------  The JavaScript prototype property also allows you to add new methods to objects constructors
-
-
 
 */
         
