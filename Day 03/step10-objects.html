@@ -190,25 +190,25 @@
 
     // Create an Object
 
-    const person = {
-        name: "John",
-        age: 30,
-        city: "New York"
-    };
+    // const person = {
+    //     name: "John",
+    //     age: 30,
+    //     city: "New York"
+    // };
 
     // Display Properties
 
-    document.getElementById("demo").innerHTML = person.name + "," + person.age + "," + person.city;
+    // document.getElementById("demo").innerHTML = person.name + "," + person.age + "," + person.city;
 
-    // Displaying Object Properties in a loop
+    // // Displaying Object Properties in a loop
 
-    // let text = "";
-    //     for (let x in person) {
-    //         text += person[x] + " ";
-    //     };
+    // // let text = "";
+    // //     for (let x in person) {
+    // //         text += person[x] + " ";
+    // //     };
 
-    // Display the Text
-    document.getElementById("demo").innerHTML = text;
+    // // Display the Text
+    // document.getElementById("demo").innerHTML = text;
 
     /*
 
@@ -221,21 +221,21 @@
     // Using Object.values()
 
         // Create an Array
-        const myArray = Object.values(person);
+        // const myArray = Object.values(person);
 
-        // Display the Array
-        document.getElementById("demo").innerHTML = myArray;
+        // // Display the Array
+        // document.getElementById("demo").innerHTML = myArray;
 
     // Using Object.entries()
 
     // Object.entries() makes it simple to use objects in loops:
 
-    const fruits = { Bananas: 300, Oranges: 200, Apples: 500 };
+    // const fruits = { Bananas: 300, Oranges: 200, Apples: 500 };
 
-        let text = "";
-        for (let [fruit, value] of Object.entries(fruits)) {
-            text += fruit + ": " + value + "<br>";
-        }
+    //     let text = "";
+    //     for (let [fruit, value] of Object.entries(fruits)) {
+    //         text += fruit + ": " + value + "<br>";
+    //     }
     
     // Using JSON.stringify()
 
@@ -247,11 +247,110 @@
 
     ---------{ "name": "John", "age": 50, "city": "New York" } */
 
-        // Stringify Object
-        let myString = JSON.stringify(person);
+        // // Stringify Object
+        // let myString = JSON.stringify(person);
 
-        // Display String
-        document.getElementById("demo").innerHTML = myString;
+        // // Display String
+        // document.getElementById("demo").innerHTML = myString;
+
+
+        // ---------------------------------------------------------------------------------
+
+        // Javascript Object Constructors
+
+        /*
+        -- Sometimes we need to create objects of the same type.
+        -- to create objects of the same type we use a object constructor function,
+        -- it considered a good practice to name constructor functions with uppercase
+        first letter.
+        */
+
+        // function Flower(type, color, price){
+        //     this.typeName = type;
+        //     this.flowerColor = color;
+        //     this.flowerPrice = price;
+        //     this.flowerAvailability = "Available";
+        //      // --------------- for giving default values.
+        // }
+
+        // in this constructor function, this  has no value.
+        // the value of this will become the new object when a new object is created.
+
+        // ---- creating similar objects.
+
+        const flowerOne = new Flower( 'Rose', 'Red', '40');
+        const flowerTwo = new Flower( 'Lotus', 'Pink', '45');
+        const flowerThree = new Flower( 'Chembaruthi', 'White', '55');
+
+        // console.log(flowerTwo);
+
+        // adding property to an object
+
+        // flowerTwo.terrain = "water"; // the property is added only to flowerTwo and not any other flower objects.
+
+        // console.log(flowerTwo);
+
+        // Flower.discount = 'Available'; // but this won't work
+        // console.log(Flower);
+
+        // to add a new property you must add it to the constructor 
+        // function prototype.
+
+        // Flower.prototype.discount = "Available";
+        // console.log(Flower);
+
+        // CONSTRUCTOR FUNCTION METHODS
+
+        function Flower(type, color, price){
+            this.typeName = type;
+            this.flowerColor = color;
+            this.flowerPrice = price;
+            this.flowerAvailability = "Available";
+            this.sentece = function(){
+                return this.typeName+ " is " + this.flowerColor;
+            }
+        };
+
+
+        // Adding a method to created object is easy.
+
+        flowerOne.changeName = function(nameType){
+            this.type = nameType;
+        };
+
+        // console.log(flowerOne);
+        // console.log(flowerTwo);
+
+        // -------------------------------------------------------------------------------
+
+
+        //  Adding a method to a constructor
+
+        Flower.changeName = function(typeName){
+            this.type = typeName;
+        }
+
+        flowerOne.changeName('lily');
+
+        Flower.prototype.changeName = function(typeName){
+            this.type = typeName;
+        }
+
+        flowerTwo.changeName('sunflower');
+
+        console.log(flowerTwo);
+
+        console.log(flowerOne);
+        
+
+
+
+
+
+
+         
+        
+        
     
 
         
