@@ -598,6 +598,32 @@ console.log(entries);
 // Creates an object from a list of keys/values
 Object.fromEntries()
 
+
+
+const fruits = [
+  ["apples", 300],
+  ["pears", 900],
+  ["bananas", 500]
+];
+
+const myObj = Object.fromEntries(fruits);
+
+{
+  apples: 300,
+  pears: 900,
+  bananas: 500
+}
+
+/*
+
+----- The fruits array contains three inner arrays: ["apples", 300], ["pears", 900], and ["bananas", 500].
+----- When Object.fromEntries(fruits) is called, it converts these inner arrays into key-value pairs of an object.
+----- The resulting object, myObj, will have properties with the keys "apples", "pears", and "bananas", and the 
+corresponding values 300, 900, and 500.
+
+*/
+
+
 // Returns an array of the keys of an object
 Object.keys(object)
 
