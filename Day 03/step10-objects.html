@@ -670,6 +670,97 @@ console.log(totalValue);
 // Groups object elements according to a function
 Object.groupBy(object, callback)
 
+// ----------------------------------------------------------------------------------------------------------------------------------
+
+// JavaScript for...in Loop 
+
+/*
+ The `for...in` loop in JavaScript is used to iterate over the enumerable properties of an object. 
+ It iterates over the keys (property names) of an object, allowing you to access both the key and the corresponding 
+ value during each iteration.
+
+----Syntax
+
+*/
+for (variable in object) {
+  // Code to be executed for each property
+}
+/*
+
+- `variable`: A variable that will be assigned the key of each property in the object during each iteration.
+- `object`: The object whose enumerable properties are to be iterated.
+
+### Example 1: Basic Usage
+
+*/
+const person = {
+  name: 'John',
+  age: 30,
+  city: 'New York'
+};
+
+for (let key in person) {
+  console.log(key + ': ' + person[key]);
+}
+
+
+
+// Output:
+
+```
+name: John
+age: 30
+city: New York
+```
+
+/*In this example:
+- The `for...in` loop iterates over the `person` object's properties (`name`, `age`, `city`).
+- During each iteration, `key` holds the property name, and `person[key]` gives the corresponding value.
+
+
+### Summary
+
+- The `for...in` loop is used to iterate over the enumerable properties of an object.
+- It iterates over all enumerable properties, including inherited ones.
+- For arrays, `for...of` or traditional `for` loops are preferred.
+- To exclude inherited properties, use `hasOwnProperty`.
+*/
+
+// Practical Usage Example
+
+// Consider a scenario where you have an object representing a student's grades, and you want to calculate the average grade.
+
+
+const grades = {
+  math: 90,
+  english: 85,
+  science: 92
+};
+
+let total = 0;
+let count = 0;
+
+for (let subject in grades) {
+  if (grades.hasOwnProperty(subject)) {
+    total += grades[subject];
+    count++;
+  }
+}
+
+const average = total / count;
+console.log('Average Grade:', average);
+// Output: Average Grade: 89
+
+
+/*
+In this example:
+- We iterate over the `grades` object's properties.
+- We sum up the grades and count the number of subjects.
+- Finally, we calculate and log the average grade.
+
+
+*/
+
 
 
 // ------------------------------------------------------------------------------------------------
